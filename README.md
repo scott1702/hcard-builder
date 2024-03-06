@@ -8,7 +8,7 @@ Scrum board here for future additions: https://trello.com/invite/b/ZpJFsMMz/ATTI
 
 https://hcard.geekhood.net/ can be used for validating the output of the vcard.
 
-**Note:** Using the "Fragment" validator will cause an error if an image exists. This is due to Vue not putting a closing tag on the <img> element which is only valid in HTML5 and not XHTML. Because of this, for accurate testing you should copy the vcard HTML to a separate file and validate via the Upload tab which supports HTML5.
+**Note:** Using the "Fragment" validator will cause an error if an image exists. This is due to Vue not putting a closing tag on the `<img>` element which is only valid in HTML5 and not XHTML. Because of this, for accurate testing you should copy the vcard HTML to a separate file and validate via the Upload tab which supports HTML5.
 
 ## Recommended IDE Setup
 

@@ -4,6 +4,9 @@ import BuilderInput from './BuilderInput.vue';
 
 const store = useBuilderStore();
 
+/**
+ * Handle the file change event and set the avatar on the store to the selected file
+ */
 const handleFileChange = (event) => {
   const file = event.target.files[0];
   const reader = new FileReader();
@@ -14,6 +17,22 @@ const handleFileChange = (event) => {
 
   reader.readAsDataURL(file);
 };
+
+/**
+ * Copy the contents of the hCard to the clipboard and alert the user
+ */
+const handleCreateHCard = () => {
+  const vcardEl = document.querySelector('.vcard');
+
+  if (!vcardEl) {
+    console.error('vcard element not found');
+    return;
+  }
+
+  navigator.clipboard.writeText(vcardEl.outerHTML);
+
+  alert('hCard HTML copied to clipboard');
+}
 </script>
 
 <template>
@@ -37,7 +56,9 @@ const handleFileChange = (event) => {
     <div class="form__actions">
       <input id="avatar" class="form__file-input" type="file" @change="handleFileChange">
       <label for="avatar" class="form__action">Upload avatar</label>
-      <button class="form__action form__action--primary" type="submit">Create hCard</button>
+      <button class="form__action form__action--primary" type="button" @click="handleCreateHCard">
+        Create hCard
+      </button>
     </div>
   </form>
 </template>
