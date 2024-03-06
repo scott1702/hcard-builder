@@ -1,47 +1,57 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import BuilderForm from './components/BuilderForm.vue';
+import BuilderPreview from './components/BuilderPreview.vue';
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <main class="builder">
+    <div class="builder__form">
+      <h1 class="builder__title">hCard Builder</h1>
+      <BuilderForm></BuilderForm>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
+    <div class="builder__preview">
+      <BuilderPreview></BuilderPreview>
+    </div>
   </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<style scoped lang="scss">
+.builder {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  @include desktop {
+    flex-direction: row;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  &__form {
+    padding: 30px;
+
+    @include desktop {
+      width: 55%;
+    }
   }
 
-  header .wrapper {
+  &__title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 0 30px;
+  }
+
+  &__preview {
+    background: var(--aria);
     display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10px;
+    width: 100%;
+
+    @include desktop {
+      min-height: 100vh;
+      min-width: calc(var(--preview-card-width) + 20px);
+      width: 45%;
+    }
   }
 }
 </style>
