@@ -12,5 +12,6 @@ export const useBuilderStore = defineStore('builder', {
     state: '',
     postcode: '',
     country: '',
+    avatar: '',
   })
 });

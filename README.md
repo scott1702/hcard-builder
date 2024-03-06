@@ -4,6 +4,12 @@ Live preview for building hcards based on [hCard 1.0 spec](https://microformats.
 
 Scrum board here for future additions: https://trello.com/invite/b/ZpJFsMMz/ATTI89e2206cce239b821ea2b9795ccba415962E0074/hcard-builder 
 
+## Testing
+
+https://hcard.geekhood.net/ can be used for validating the output of the vcard.
+
+**Note:** Using the "Fragment" validator will cause an error if an image exists. This is due to Vue not putting a closing tag on the <img> element which is only valid in HTML5 and not XHTML. Because of this, for accurate testing you should copy the vcard HTML to a separate file and validate via the Upload tab which supports HTML5.
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).

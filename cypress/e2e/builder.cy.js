@@ -44,4 +44,18 @@ describe('hCard Builder', () => {
     cy.get('.vcard .postal-code').should('have.text', '2010');
     cy.get('.vcard .country-name').should('have.text', 'Australia');
   })
+
+  it('Handles photo uploads', () => {
+    // Photo element doesn't exist before uploading
+    cy.get('.vcard .photo').should('not.exist');
+
+    // Upload avatar
+    cy.get('input[type=file]').selectFile('cypress/fixtures/avatar.png');
+
+    // Photo element exists and has loaded src after file upload
+    cy.get('.vcard .photo')
+      .should('exist')
+      .should('have.attr', 'src')
+      .and('match', /data:image\/png;base64,/);
+  })
 })

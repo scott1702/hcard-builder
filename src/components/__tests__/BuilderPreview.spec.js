@@ -22,6 +22,7 @@ describe('BuilderPreview', () => {
               state: 'NSW',
               postcode: '2010',
               country: 'Australia',
+              avatar: 'path-to-image.jpg'
             }
           }
         })],
@@ -40,5 +41,6 @@ describe('BuilderPreview', () => {
     expect(await wrapper.find('.region').text()).toBe('NSW');
     expect(await wrapper.find('.postal-code').text()).toBe('2010');
     expect(await wrapper.find('.country-name').text()).toBe('Australia');
+    expect(await wrapper.find('.photo').attributes('src')).toBe('path-to-image.jpg');
   });
 })

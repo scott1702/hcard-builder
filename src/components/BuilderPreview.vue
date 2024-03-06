@@ -13,7 +13,7 @@ const store = useBuilderStore();
         <template v-if="store.givenName && store.surname">{{ ' ' }}</template>
         <span v-if="store.surname" class="family-name">{{ store.surname }}</span>
       </span>
-      <!-- <img class="photo" src="http://example.com/image.jpg"/> -->
+      <img v-if="store.avatar" class="preview__avatar photo" :src="store.avatar" alt="hcard avatar" />
     </div>
     <div class="preview__body">
       <div class="preview__field">
@@ -70,12 +70,23 @@ const store = useBuilderStore();
     background: var(--oil-rush);
     color: var(--white);
     display: flex;
-    height: 120px;
-    padding: 30px;
+    height: 100px;
+    padding: 24px 20px;
+    position: relative;
+  }
+
+  &__avatar {
+    height: 100px;
+    object-fit: contain;
+    margin-left: auto;
+    right: 10px;
+    position: absolute;
+    top: 10px;
+    width: 100px;
   }
 
   &__name {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 500;
   }
 
