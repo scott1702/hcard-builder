@@ -9,7 +9,7 @@ const store = useBuilderStore();
   <form class="form">
     <fieldset class="form__fieldset">
       <legend class="form__legend">Personal details</legend>
-      <BuilderInput class="form__input" label="Given Name" v-model="store.givenName" />
+      <BuilderInput class="form__input" label="Given name" v-model="store.givenName" />
       <BuilderInput class="form__input" label="Surname" v-model="store.surname" />
       <BuilderInput class="form__input" type="email" label="Email" v-model="store.email" />
       <BuilderInput class="form__input" type="tel" label="Phone" v-model="store.phone" />
