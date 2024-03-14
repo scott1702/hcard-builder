@@ -88,6 +88,7 @@ const store = useBuilderStore();
   &__name {
     font-size: 1.4rem;
     font-weight: 500;
+    padding-right: 115px;
   }
 
   &__body {
